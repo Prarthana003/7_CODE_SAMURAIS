@@ -6,39 +6,39 @@ export const quiz = {
     questions: [
       {
         question:
-          'She nervously peered over the edge. She understood in her mind that the view was supposed to be beautiful, but all she felt was fear. There had always been something about heights that disturbed her, and now she could feel the full force of this unease. She reluctantly crept a little closer with the encouragement of her friends as the fear continued to build. She couldn\'t help but feel that something horrible was about to happen. ',
-        ques:'but all she felt was ___',
-          choices: ['nervous', 'fear', 'beautiful', 'full'],
+        "Which number should come next in the pattern?",
+        ques:'37, 34, 31, 28',
+          choices: ['32','25','23','24'],
         type: 'MCQs',
-        correctAnswer: 'fear',
+        correctAnswer: '25',
       },
       {
         question:
-          'She nervously peered over the edge. She understood in her mind that the view was supposed to be beautiful, but all she felt was fear. There had always been something about heights that disturbed her, and now she could feel the full force of this unease. She reluctantly crept a little closer with the encouragement of her friends as the fear continued to build. She couldn\'t help but feel that something horrible was about to happen. \n',
-          ques:'She reluctantly ___ a little ',
-          choices: ['closer', 'continued', 'crept', 'happen'],
+          'Which answer expresses the meaning of the specified word best? ',
+          ques:'  reassuring',
+          choices: ['compassionate', 'comforting', 'explanatory', 'happen',' meddlesome'],
         type: 'MCQs',
-        correctAnswer: 'crept',
+        correctAnswer: 'comforting',
       },
       {
         question:
-          'She nervously peered over the edge. She understood in her mind that the view was supposed to be beautiful, but all she felt was fear. There had always been something about heights that disturbed her, and now she could feel the full force of this unease. She reluctantly crept a little closer with the encouragement of her friends as the fear continued to build. She couldn\'t help but feel that something horrible was about to happen. \n ',
-          ques:'There had always been something about ___ that disturbed her ',
+          'What number best completes the analogy:',
+          ques:'8:4 as 10:',
           choices: [
-          'heights',
-          'horrible',
-          'hope',
-          'happen',
+          '3',
+          ' 7',
+          '24',
+          '5',
         ],
         type: 'MCQs',
-        correctAnswer: 'heights',
+        correctAnswer: '5',
       },
       {
-        question: 'She nervously peered over the edge. She understood in her mind that the view was supposed to be beautiful, but all she felt was fear. There had always been something about heights that disturbed her, and now she could feel the full force of this unease. She reluctantly crept a little closer with the encouragement of her friends as the fear continued to build. She couldn\'t help but feel that something horrible was about to happen. \n',
-        ques:'What did she feel was about to happen?',
-        choices: ['amazing', 'horrible', 'disturbing', 'uneasy'],
+        question: 'Which number logically follows this series?\n',
+        ques:'7 9 5 11 4 15 12 7 13 8 11 ?',
+        choices: ['8', '10', '11', '13'],
         type: 'MCQs',
-        correctAnswer: 'horrible',
+        correctAnswer: '10',
       },
       
     ],
