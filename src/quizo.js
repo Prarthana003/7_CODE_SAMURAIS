@@ -11,6 +11,7 @@ export const quiz = {
           choices: ['32','25','23','24'],
         type: 'MCQs',
         correctAnswer: '25',
+        weight: 5
       },
       {
         question:
@@ -19,6 +20,7 @@ export const quiz = {
           choices: ['compassionate', 'comforting', 'explanatory', 'happen',' meddlesome'],
         type: 'MCQs',
         correctAnswer: 'comforting',
+        weight: 2
       },
       {
         question:
@@ -32,6 +34,7 @@ export const quiz = {
         ],
         type: 'MCQs',
         correctAnswer: '5',
+        weight: 10
       },
       {
         question: 'Which number logically follows this series?\n',
@@ -39,6 +42,7 @@ export const quiz = {
         choices: ['8', '10', '11', '13'],
         type: 'MCQs',
         correctAnswer: '10',
+        weight: 5
       },
       
     ],
