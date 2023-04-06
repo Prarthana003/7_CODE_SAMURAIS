@@ -6,40 +6,39 @@ export const inter = {
     questions: [
       {
         question:
-          "The time had come for Nancy to say goodbye. She had been dreading this moment for a good six months, and it had finally arrived despite her best efforts to forestall it. No matter how hard she tried, she couldn't keep the inevitable from happening. So the time had come for a normal person to say goodbye and move on. It was at this moment that Nancy decided not to be a normal person. After all the time and effort she had expended, she couldn't bring herself to do it. \n ",
-        ques:'She had been _ , this moment ',
-          choices: ['threading ', 'breading ', ' dreading  ', 'happening'],
+        "Which number should come next in the pattern?",
+        ques:'37, 34, 31, 28',
+          choices: ['32','25','23','24'],
         type: 'MCQs',
-        correctAnswer: 'dreading ',
+        correctAnswer: '25',
       },
       {
         question:
-          "The time had come for Nancy to say goodbye. She had been dreading this moment for a good six months, and it had finally arrived despite her best efforts to forestall it. No matter how hard she tried, she couldn't keep the inevitable from happening. So the time had come for a normal person to say goodbye and move on. It was at this moment that Nancy decided not to be a normal person. After all the time and effort she had expended, she couldn't bring herself to do it. \n",
-          ques:"she couldn't keep the _ , from happening",
-          choices: ['inevitable', 'invitation', ' horrible', 'invincible'],
+          'Which answer expresses the meaning of the specified word best? ',
+          ques:'  reassuring',
+          choices: ['compassionate', 'comforting', 'explanatory', 'happen',' meddlesome'],
         type: 'MCQs',
-        correctAnswer: 'inevitable',
+        correctAnswer: 'comforting',
       },
       {
         question:
-          "The time had come for Nancy to say goodbye. She had been dreading this moment for a good six months, and it had finally arrived despite her best efforts to forestall it. No matter how hard she tried, she couldn't keep the inevitable from happening. So the time had come for a normal person to say goodbye and move on. It was at this moment that Nancy decided not to be a normal person. After all the time and effort she had expended, she couldn't bring herself to do it. \n",
-          ques:'Nancy decided not to be _ ',
+          'What number best completes the analogy:',
+          ques:'8:4 as 10:',
           choices: [
-          'nothing',
-          'never',
-          'noisy',
-          'normal',
+          '3',
+          ' 7',
+          '24',
+          '5',
         ],
         type: 'MCQs',
-        correctAnswer: 'normal',
+        correctAnswer: '5',
       },
       {
-        question: 
-            "The time had come for Nancy to say goodbye. She had been dreading this moment for a good six months, and it had finally arrived despite her best efforts to forestall it. No matter how hard she tried, she couldn't keep the inevitable from happening. So the time had come for a normal person to say goodbye and move on. It was at this moment that Nancy decided not to be a normal person. After all the time and effort she had expended, she couldn't bring herself to do it.\n",
-            ques:'After all the time and ___ she had expended',
-            choices: ['effect', 'affect', 'effort', 'affirm'],
-            type: 'MCQs',
-            correctAnswer: 'effort',
+        question: 'Which number logically follows this series?\n',
+        ques:'7 9 5 11 4 15 12 7 13 8 11 ?',
+        choices: ['8', '10', '11', '13'],
+        type: 'MCQs',
+        correctAnswer: '10',
       },
     ],
   }
