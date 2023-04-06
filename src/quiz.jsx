@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { quiz } from './quizo.js'
 import './quiz.css'
 import {useNavigate} from 'react-router-dom'
+import {list} from './quiz1List.js'
 
 const Quiz = () => {
   const [activeQuestion, setActiveQuestion] = useState(0)
@@ -12,14 +13,16 @@ const Quiz = () => {
     score: 0,
     correctAnswers: 0,
     wrongAnswers: 0,
+    total:0
   })
-
+  const [] = list
   const { questions } = quiz
-  const { question,ques, choices, correctAnswer } = questions[activeQuestion]
+  const { question,ques, choices, correctAnswer ,weight} = questions[activeQuestion]
 
   const navigate = useNavigate()
 
   const onClickNext = () => {
+    console.log("slkfklflk")
     // again reset the selectedAnwerIndex, so it won't effect next question
     setSelectedAnswerIndex(null)
     setActiveQuestion((prev) => prev + 1)
@@ -32,15 +35,22 @@ const Quiz = () => {
           }
         : { ...prev, wrongAnswers: prev.wrongAnswers + 1 }
     )
+
+
   }
 
   const onAnswerSelected = (answer, index) => {
     setSelectedAnswerIndex(index)
     if (answer === correctAnswer) {
       setSelectedAnswer(true)
+      result.total = weight* 5
+      list.push(result.total)
+
+      
     } else {
       setSelectedAnswer(false)
     }
+    console.log(result.total)
   }
 
   const addLeadingZero = (number) => (number > 9 ? number : `0${number}`)
@@ -60,20 +70,30 @@ const Quiz = () => {
       <ul>
         {choices.map((answer, index) => (
           <li
-            onClick={() => onAnswerSelected(answer, index)}
+            onClick={() => onAnswerSelected(answer, index)
+              
+            }
             key={answer}
             className={
               selectedAnswerIndex === index ? 'selected-answer' : null
             }>
             {answer}
+            
+
           </li>
         ))}
       </ul>
       <div className="flex-right">
         <button onClick={
             ()=>{
-                //if(result.score >15){
+                if(activeQuestion === questions.length - 1  ){
+                  console.log("alkfjlkjfljfljfiljlejilerfpaw")
+                  navigate('/end')
+                }
+                else{
+                  console.log("hgkaaaaaaaaaaaaaaaaaaaaa")
                     navigate('/intermediate');
+                }
                 //}
 
             }
@@ -97,6 +117,9 @@ const Quiz = () => {
           <p>
             Total Score:<span> {result.score}</span>
           </p>
+          <script>
+            var ac = {result.correctAnswers}/{questions.length}*100
+          </script>
           <p>
             var acc = 
             Accuracy:<span>({result.correctAnswers}/{questions.length})*100 </span>
