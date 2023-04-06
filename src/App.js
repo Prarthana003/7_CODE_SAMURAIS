@@ -4,7 +4,7 @@ import {React ,createContext} from "react";
 import Quiz from './quiz';
 import Inter from './interm';
 import End  from './final';
-
+import Lesson from './lessonPage'
 import { Route,Routes } from 'react-router-dom';
 /*
 import {
@@ -40,6 +40,7 @@ function App() {
     <Route exact path = "/" element={<Quiz/>}/>
     <Route exact path = "/intermediate" element={<Inter/>}/>
     <Route exact path ="/end" element={<End/>}></Route>
+    <Route exact path ="/lesson" element={<Lesson/>}  />
     </Routes>
    
     </div>
