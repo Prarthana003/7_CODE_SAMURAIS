@@ -3,12 +3,17 @@ import { quiz } from './quizo.js'
 import './quiz.css'
 import {useNavigate} from 'react-router-dom'
 import {list} from './quiz1List.js'
+import { createContext } from 'react'
+var res = require("./res.js")
+
+export const resContext = createContext(null)
 
 const Quiz = () => {
   const [activeQuestion, setActiveQuestion] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState('')
   const [setShowResult, showResult]= useState(false)
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null)
+  //const[eval, setweight] = useState(0)
   const [result, setResult] = useState({
     score: 0,
     correctAnswers: 0,
@@ -18,6 +23,7 @@ const Quiz = () => {
   const [] = list
   const { questions } = quiz
   const { question,ques, choices, correctAnswer ,weight} = questions[activeQuestion]
+  var l=[]
 
   const navigate = useNavigate()
 
@@ -26,6 +32,7 @@ const Quiz = () => {
     // again reset the selectedAnwerIndex, so it won't effect next question
     setSelectedAnswerIndex(null)
     setActiveQuestion(activeQuestion+1)
+    console.log(activeQuestion);
     setResult((prev) =>
       selectedAnswer
         ? {
@@ -33,24 +40,48 @@ const Quiz = () => {
             score: prev.score + 5,
             correctAnswers: prev.correctAnswers + 1,
           }
-        : { ...prev, wrongAnswers: prev.wrongAnswers + 1 }
+        : { ...prev, wrongAnswers: prev.wrongAnswers + 1 },
+        
     )
 
+  
 
   }
+
 
   const onAnswerSelected = (answer, index) => {
     setSelectedAnswerIndex(index)
     if (answer === correctAnswer) {
       setSelectedAnswer(true)
       result.total = weight* 5
-      list.push(result.total)
-
+      res.push(result.total)
+      console.log("current weight =",result.total)
       
     } else {
       setSelectedAnswer(false)
     }
     console.log(result.total)
+  }
+
+
+  const nextFinish = () => {
+    setSelectedAnswerIndex(null)
+    setActiveQuestion(prev => prev+1);
+    console.log(quiz.questions.length -1)
+    console.log(activeQuestion)
+
+    console.log(activeQuestion);
+    setResult((prev) =>
+      selectedAnswer
+        ? {
+            ...prev,
+            score: prev.score + 5,
+            correctAnswers: prev.correctAnswers + 1,
+          }
+        : { ...prev, wrongAnswers: prev.wrongAnswers + 1 },
+        l.push(weight*5)
+    )
+    
   }
 
   const addLeadingZero = (number) => (number > 9 ? number : `0${number}`)
@@ -84,9 +115,14 @@ const Quiz = () => {
         ))}
       </ul>
       <div className="flex-right">
-        <button onClick={
-            onClickNext
-            
+        <button onClick={() => {
+          if(activeQuestion === questions.length - 1) {
+            navigate('/lesson')
+          } else {
+            nextFinish()
+          }
+        }
+          
         } disabled={selectedAnswerIndex === null}>
           {activeQuestion === questions.length - 1 ? 'Finish' : 'Next'}
         </button>
