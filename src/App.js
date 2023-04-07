@@ -5,6 +5,7 @@ import Quiz from './quiz';
 import Inter from './interm';
 import End  from './final';
 import Lesson from './lessonPage'
+import Quiz2 from './gen'
 import { Route,Routes } from 'react-router-dom';
 /*
 import {
@@ -41,6 +42,7 @@ function App() {
     <Route exact path = "/intermediate" element={<Inter/>}/>
     <Route exact path ="/end" element={<End/>}></Route>
     <Route exact path ="/lesson" element={<Lesson/>}  />
+    <Route exact path = "/quiz2" element={<Quiz2/>} />
     </Routes>
    
     </div>
