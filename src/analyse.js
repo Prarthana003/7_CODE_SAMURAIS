@@ -1,16 +1,20 @@
 const lessonList = require("./lessons")
 
 export default function Analyse(list){
+    console.log("this is analyse function, list = ",list)
     let s=0
     let level=1
-    for(var i=0;i<10;i++){
+
+    let limit = list.length
+
+    for(let i=0;i<limit;i++){
         s+=list[i]
     }
-
-    if (s<10)
+    console.log("final total = ",s)
+    if (s<30)
         level = 1
 
-    else if(s>=10 && s<30)
+    else if(s>=30 && s<100)
         level =2
 
     else{
