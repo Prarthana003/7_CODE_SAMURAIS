@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { quiz } from './quizo.js'
+import { general } from './general.js'
 import './quiz.css'
 import {useNavigate} from 'react-router-dom'
 import {list} from './quiz1List.js'
 
-const Quiz = () => {
+const Quiz2 = () => {
   const [activeQuestion, setActiveQuestion] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState('')
   const [setShowResult, showResult]= useState(false)
@@ -16,7 +16,7 @@ const Quiz = () => {
     total:0
   })
   const [] = list
-  const { questions } = quiz
+  const { questions } = general
   const { question,ques, choices, correctAnswer ,weight} = questions[activeQuestion]
 
   const navigate = useNavigate()
@@ -25,7 +25,7 @@ const Quiz = () => {
     console.log("slkfklflk")
     // again reset the selectedAnwerIndex, so it won't effect next question
     setSelectedAnswerIndex(null)
-    setActiveQuestion(activeQuestion+1)
+    setActiveQuestion((prev) => prev + 1)
     setResult((prev) =>
       selectedAnswer
         ? {
@@ -85,7 +85,19 @@ const Quiz = () => {
       </ul>
       <div className="flex-right">
         <button onClick={
-            onClickNext
+            ()=>{
+                console.log("aaaaaaaaaaaaaaaaa")
+                if(activeQuestion === questions.length - 1  ){
+                  console.log("alkfjlkjfljfljfiljlejilerfpaw")
+                  navigate('/end')
+                }
+                else{
+                  console.log("hgkaaaaaaaaaaaaaaaaaaaaa")
+                    //navigate('/quiz2');
+                }
+                //}
+
+            }
             
         } disabled={selectedAnswerIndex === null}>
           {activeQuestion === questions.length - 1 ? 'Finish' : 'Next'}
@@ -127,4 +139,4 @@ const Quiz = () => {
   )
 }
 
-export default Quiz
+export default Quiz2
